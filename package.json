@@ -2,6 +2,10 @@
   "name": "sodium",
   "module": "src/index.ts",
   "type": "module",
+  "scripts": {
+    "dev": "bun run --hot ./src/index.ts",
+    "build": "bun build ./src/index.ts --outdir ./build"
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },

@@ -1,0 +1,20 @@
+name: "sodium"
+services:
+  bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./src:/usr/src/app/src
+      - ./node_modules:/usr/src/app/node_modules
+    environment:
+      NODE_ENV: development
+    env_file:
+      - .env
+    command: bun dev
+    networks:
+      - net
+networks:
+  net:
