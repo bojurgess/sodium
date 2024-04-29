@@ -1,5 +1,5 @@
 bun lint
 bun format
 bun test
-# 
-git update-index --again
+added_files=$(git diff --name-only --cached --diff-filter=d)
+git add ${added_files}
