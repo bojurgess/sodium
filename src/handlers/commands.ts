@@ -5,6 +5,7 @@ import { readdirSync } from 'fs';
 
 export const handle = async (): Promise<void> => {
     client.commands = new Collection();
+    client.cooldowns = new Collection();
 
     const commandsPath = new URL('../commands', import.meta.url).pathname;
     const dirs = readdirSync(commandsPath).filter(
