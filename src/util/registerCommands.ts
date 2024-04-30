@@ -14,7 +14,7 @@ const commandFolders = readdirSync(__dirname).filter(
 for (const folder of commandFolders) {
     const commandsPath = join(__dirname, folder);
     const commandFiles = readdirSync(commandsPath).filter((file: string) =>
-        file.endsWith('.ts')
+        file.endsWith('.tss')
     );
     for (const file of commandFiles) {
         const filePath = join(commandsPath, file);

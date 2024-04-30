@@ -5,17 +5,17 @@ import { readdirSync } from 'fs';
 
 client.commands = new Collection();
 
-const commandFolders = readdirSync(__dirname).filter(
+const dirs = readdirSync(__dirname).filter(
     (item: string) => !item.endsWith('.ts')
 );
 
-for (const folder of commandFolders) {
-    const commandsPath = join(__dirname, folder);
-    const commandFiles = readdirSync(commandsPath).filter((file: string) =>
+for (const dir of dirs) {
+    const path = join(__dirname, dir);
+    const files = readdirSync(path).filter((file: string) =>
         file.endsWith('.ts')
     );
-    for (const file of commandFiles) {
-        const filePath = join(commandsPath, file);
+    for (const file of files) {
+        const filePath = join(path, file);
         const commandModule = await import(filePath);
         const command = commandModule.default;
 

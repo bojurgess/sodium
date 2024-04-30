@@ -1,4 +1,4 @@
-import './log';
+import './util/log';
 import { parseArgs } from 'util';
 
 const args = new Map();
@@ -35,7 +35,7 @@ const args = new Map();
 })();
 
 if (args.has('register_commands')) {
-    await import('./commands/register');
+    await import('./util/registerCommands');
     process.exit(0);
 }
 
