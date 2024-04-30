@@ -3,7 +3,7 @@
     "module": "src/index.ts",
     "type": "module",
     "scripts": {
-        "dev": "bun run --hot ./src/index.ts",
+        "dev": "bun run --watch ./src/index.ts",
         "build": "bun build ./src/index.ts --outdir ./build --target bun",
         "format": "prettier --write .",
         "prepare": "husky"
